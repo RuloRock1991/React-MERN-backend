@@ -94,7 +94,7 @@ const deleteEvent = async(req, resp = response) => {
             });
         }
 
-        await Event.findOneAndDelete(eventId);
+        await Event.findByIdAndDelete(eventId);
 
         resp.json({
             ok: true
@@ -106,10 +106,6 @@ const deleteEvent = async(req, resp = response) => {
             msg: "Contacte al administrador"
         });
     }
-    resp.json({
-        ok: true,
-        msg: "Delete Events"
-    });
 };
 
 module.exports = {
